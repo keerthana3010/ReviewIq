@@ -22,9 +22,6 @@ train = st.cache_resource(train)
 make_demo = st.cache_data(make_demo)
 st.set_page_config(page_title="ReviewIQ", page_icon="📊", layout="wide")
 px.defaults.template = "plotly_white"   # light charts
-if not hasattr(st, "_orig_plotly_chart"):   # wrap only once (Streamlit re-runs this script)
-    st._orig_plotly_chart = st.plotly_chart
-st.plotly_chart = lambda fig, **k: st._orig_plotly_chart(fig, **{**k, "theme": None})
 _cfg = os.path.join(os.path.dirname(__file__), ".streamlit", "config.toml")
 if not os.path.exists(_cfg):   # light theme for tables/inputs (applies after restart)
     os.makedirs(os.path.dirname(_cfg), exist_ok=True)
