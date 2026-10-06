@@ -13,25 +13,6 @@ import streamlit as st
 import plotly.express as px
 
 from PIL import Image, ImageDraw
-
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import (
-    accuracy_score,
-    precision_recall_fscore_support,
-    confusion_matrix,
-)
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import LinearSVC
-
-try:
-    from xgboost import XGBClassifier
-except Exception:
-    XGBClassifier = None
-
-
 # ---------------------------------------------------------
 # Project modules
 # ---------------------------------------------------------
